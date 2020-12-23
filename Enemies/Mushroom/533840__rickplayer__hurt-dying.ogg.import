@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/533840__rickplayer__hurt-dying.ogg-2233c16adc1b7532d02d6b04906b190d.oggstr"
+
+[deps]
+
+source_file="res://Enemies/Mushroom/533840__rickplayer__hurt-dying.ogg"
+dest_files=[ "res://.import/533840__rickplayer__hurt-dying.ogg-2233c16adc1b7532d02d6b04906b190d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

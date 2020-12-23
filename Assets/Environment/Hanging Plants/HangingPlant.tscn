@@ -1,0 +1,119 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/Environment/Hanging Plants/Bottom.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Environment/Hanging Plants/HangingPlant.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Environment/Hanging Plants/MiddleSection.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1.55319, 0.535881 )
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 0.446133
+height = 5.58236
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 0.475882
+height = 5.85695
+
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 0.476272
+height = 7.85865
+
+[sub_resource type="Animation" id=3]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.6, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -7.0, 7.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.201, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1.05 ), Vector2( 1, 1 ), Vector2( 1, 1.05 ), Vector2( 1, 0 ) ]
+}
+
+[node name="HangingPlant" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 0, -5.11452 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 1 )
+disabled = true
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2( 0.0300827, -5.11452 )
+scale = Vector2( 0.439488, 0.439488 )
+node_a = NodePath("../StaticBody2D")
+node_b = NodePath("../RigidBody2D3")
+bias = 0.9
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="."]
+position = Vector2( 0.0150414, -7.62832 )
+collision_layer = 0
+
+[node name="Sprite" type="Sprite" parent="RigidBody2D3"]
+position = Vector2( 0.515041, 6.5138 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D3"]
+position = Vector2( 0.0150414, 6.47387 )
+shape = SubResource( 4 )
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="."]
+position = Vector2( 0, 2.5138 )
+scale = Vector2( 0.429865, 0.429865 )
+node_a = NodePath("../RigidBody2D3")
+node_b = NodePath("../RigidBody2D2")
+bias = 0.9
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="."]
+collision_layer = 0
+
+[node name="Sprite" type="Sprite" parent="RigidBody2D2"]
+position = Vector2( 0.515041, 6.5138 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
+position = Vector2( 0.0150414, 6.47387 )
+shape = SubResource( 5 )
+
+[node name="PinJoint2D3" type="PinJoint2D" parent="."]
+position = Vector2( 0, 9.86999 )
+scale = Vector2( 0.41762, 0.41762 )
+node_a = NodePath("../RigidBody2D2")
+node_b = NodePath("../RigidBody2D")
+bias = 0.9
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2( 0, -0.5387 )
+collision_layer = 0
+gravity_scale = 17.14
+linear_damp = 0.0
+angular_damp = 20.0
+
+[node name="Sprite" type="Sprite" parent="RigidBody2D"]
+position = Vector2( 0.506638, 16.3784 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2( 0, 15.3637 )
+shape = SubResource( 6 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Swing = SubResource( 3 )

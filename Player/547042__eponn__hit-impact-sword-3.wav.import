@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/547042__eponn__hit-impact-sword-3.wav-298770b2fe6405e2f5a2a6348a406bc2.sample"
+
+[deps]
+
+source_file="res://Player/547042__eponn__hit-impact-sword-3.wav"
+dest_files=[ "res://.import/547042__eponn__hit-impact-sword-3.wav-298770b2fe6405e2f5a2a6348a406bc2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

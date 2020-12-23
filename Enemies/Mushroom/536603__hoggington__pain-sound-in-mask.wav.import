@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/536603__hoggington__pain-sound-in-mask.wav-db579395b9ec33e32c35e4fa2ec39cf8.sample"
+
+[deps]
+
+source_file="res://Enemies/Mushroom/536603__hoggington__pain-sound-in-mask.wav"
+dest_files=[ "res://.import/536603__hoggington__pain-sound-in-mask.wav-db579395b9ec33e32c35e4fa2ec39cf8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
